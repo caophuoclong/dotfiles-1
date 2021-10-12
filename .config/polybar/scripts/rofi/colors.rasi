@@ -1,0 +1,22 @@
+/* colors */
+
+* {
+  al:    #3B4252FF;
+  bg:    #3B4252FF;
+  bg1:   #4C566AFF;
+  bg2:   #434C5EFF;
+  bg3:   #2E3440FF;
+  fg:    #ECEFF4FF;
+  fg1:   #a1a4abFF;
+  ac: #5E81ACFF;
+  inherit: #00000000;
+  blur: #3B425290;
+  border: #3B4252ff;
+  red: #BF616A;
+  orange:#D08770;
+  yellow:#EBCB8B;
+  magenta:#B48EAD;
+  cyan:#88C0D0;
+  blue:#81A1C1;
+  green:#A3BE8C;
+}
