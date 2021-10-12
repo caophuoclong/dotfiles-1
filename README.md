@@ -12,7 +12,7 @@
 - PDF&EPUB Reader: Zathura
 - File Manager: Nautilus
 
-Tue Oct 12 08:26:49 PM +07 2021
+Tue Oct 12 08:34:25 PM +07 2021
 
 ### Install: 
 ```bash
