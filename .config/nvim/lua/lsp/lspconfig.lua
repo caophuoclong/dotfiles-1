@@ -72,7 +72,8 @@ if ok then
             cmd = {"lua-language-server", "-E"}
         },
         yamlls = {},
-        prismals = {}
+        prismals = {},
+        rust_analyzer = {}
     }
 
     local lsp_default_config = {

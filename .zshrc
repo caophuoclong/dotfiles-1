@@ -21,7 +21,7 @@ ZSH_THEME=""
 eval "$(starship init zsh)"
 
 #Plugins
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions docker docker-compose docker-machine sudo npm yarn golang gh)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions docker docker-compose docker-machine sudo npm yarn golang gh cargo)
 
 # Sources
 source $ZSH/oh-my-zsh.sh
@@ -80,3 +80,8 @@ ex() {
     echo "'$1' is not a valid file"
   fi
 }
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -e "/usr/lib/kitty/shell-integration/kitty.zsh"; then source "/usr/lib/kitty/shell-integration/kitty.zsh"; fi
+# END_KITTY_SHELL_INTEGRATION
