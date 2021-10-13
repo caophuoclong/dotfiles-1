@@ -95,6 +95,7 @@ backup)
   rm -rf $DOTFILES_DIR/.zshrc
   rm -rf $DOTFILES_DIR/.config/*
   rm -rf $DOTFILES_DIR/.config/ytfzf
+  rm -rf $DOTFILES_DIR/.config/rofi
   stop_spinner $?
 
   start_spinner "➜ Copy to dotfiles folder"
@@ -128,6 +129,7 @@ backup)
   cp -r ~/.config/sxhkd $DOTFILES_DIR/.config/
   cp -r ~/.config/vis $DOTFILES_DIR/.config/
   cp -r ~/.config/ytfzf $DOTFILES_DIR/.config/
+  cp -r ~/.config/rofi $DOTFILES_DIR/.config/
 
   stop_spinner $?
 

@@ -3,7 +3,7 @@
 
 # Open helps
 super + F1
-  ~/.config/polybar/scripts/sxhkd-help
+  ~/.config/rofi/sxhkd-help
 
 # Open Terminal
 super + Return
@@ -19,7 +19,7 @@ super + shift + Return
 
 # Open launcher
 super + slash
-  ~/.config/polybar/scripts/launcher.sh
+  ~/.config/rofi/launcher.sh
 
 # Switch input method
 super + @space
@@ -28,7 +28,7 @@ super + @space
 
 # Make sxhkd reload its configuration files:
 super + Escape
-	~/.config/polybar/scripts/powermenu.sh
+	~/.config/rofi/powermenu.sh
 
 # Open web browser
 super + b
