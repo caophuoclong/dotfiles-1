@@ -1,18 +1,5 @@
-# ~/.dotfiles
 
-- OS: Arch Linux
-- WM: bspwm
-- Editer: Neovim, Visual Studio Code
-- Web Browser: Google Chrome
-- Bar: Polybar
-- Launcher: rofi
-- Shell: zsh (starship prompt)
-- Terminal: Alacritty
-- Notification Daemon: Dunst
-- PDF&EPUB Reader: Zathura
-- File Manager: Nautilus
-
-Tue Oct 12 08:34:25 PM +07 2021
+Wed Oct 13 12:13:14 PM +07 2021
 
 ### Install: 
 ```bash

@@ -144,7 +144,6 @@ backup)
   cd $DOTFILES_DIR || exit
 
   if ! git diff --quiet HEAD || git status --short; then
-    cat ~/.scripts/specs.txt >README.md
     {
       echo ""
       echo "$CURRENT_TIME"
@@ -153,7 +152,7 @@ backup)
       echo "\`\`\`bash"
       echo "curl -o- https://raw.githubusercontent.com/thanhvule0310/dotfiles/main/.scripts/dots.sh | bash"
       echo "\`\`\`"
-    } >>README.md
+    } >README.md
 
     git add . >/dev/null 2>&1
     git commit -m "$commit_message" >/dev/null 2>&1
