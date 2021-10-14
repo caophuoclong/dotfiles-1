@@ -49,24 +49,6 @@ if ok then
     end
 
     gls.left[1] = {
-        RainbowRed = {
-            provider = function()
-                return " "
-            end,
-            highlight = {colors.white1, colors.white1}
-        }
-    }
-
-    gls.left[2] = {
-        RainbowBg = {
-            provider = function()
-                return "  "
-            end,
-            highlight = {colors.bg, colors.bg}
-        }
-    }
-
-    gls.left[3] = {
         ViMode = {
             provider = function()
                 -- auto change color according the vim mode
@@ -114,129 +96,151 @@ if ok then
                     t = "TERMINAL"
                 }
                 vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim.fn.mode()])
-                return alias[vim.fn.mode()] .. "   "
+                return "▊ " .. alias[vim.fn.mode()] .. " הּ "
             end,
-            highlight = {colors.red, colors.bg, "bold"}
-        }
-    }
-    gls.left[4] = {
-        FileSize = {
-            provider = "FileSize",
-            condition = buffer_not_empty,
-            highlight = {colors.fg, colors.bg}
-        }
-    }
-    gls.left[5] = {
-        FileIcon = {
-            provider = "FileIcon",
-            condition = buffer_not_empty,
-            highlight = {
-                require("galaxyline.provider_fileinfo").get_file_icon_color,
-                colors.bg
-            }
+            highlight = {colors.red, colors.bg1, "bold"}
         }
     }
 
-    gls.left[6] = {
-        FileName = {
-            provider = {"FileName"},
-            condition = buffer_not_empty,
-            highlight = {colors.green, colors.bg, "bold"}
-        }
-    }
-
-    gls.left[7] = {
-        LineInfo = {
-            provider = "LineColumn",
-            separator = " ",
-            separator_highlight = {"NONE", colors.bg},
-            highlight = {colors.fg, colors.bg}
-        }
-    }
-
-    gls.left[8] = {
-        PerCent = {
-            provider = "LinePercent",
-            separator = " ",
-            separator_highlight = {"NONE", colors.bg},
-            highlight = {colors.fg, colors.bg, "bold"}
-        }
-    }
-
-    gls.left[9] = {
-        DiagnosticError = {
-            provider = "DiagnosticError",
-            icon = " ",
-            highlight = {colors.red, colors.bg}
-        }
-    }
-    gls.left[10] = {
-        DiagnosticWarn = {
-            provider = "DiagnosticWarn",
-            icon = " ",
-            highlight = {colors.yellow, colors.bg}
-        }
-    }
-
-    gls.left[11] = {
-        DiagnosticHint = {
-            provider = "DiagnosticHint",
-            icon = " ",
-            highlight = {colors.cyan, colors.bg}
-        }
-    }
-
-    gls.left[12] = {
-        DiagnosticInfo = {
-            provider = "DiagnosticInfo",
-            icon = " ",
-            highlight = {colors.blue, colors.bg}
-        }
-    }
-
-    gls.left[13] = {
-        GetLspClient = {
-            provider = "GetLspClient",
-            icon = "   ",
-            highlight = {colors.yellow, colors.bg}
+    gls.left[2] = {
+        RightPL = {
+            provider = function()
+                return ""
+            end,
+            highlight = {colors.bg1, colors.bg}
         }
     }
 
     gls.right[1] = {
-        FileEncode = {
-            provider = "FileEncode",
-            separator = " ",
-            separator_highlight = {"NONE", colors.bg},
-            highlight = {colors.cyan, colors.bg, "bold"}
+        LeftPL = {
+            provider = function()
+                return ""
+            end,
+            highlight = {colors.bg1, colors.bg}
         }
     }
 
     gls.right[2] = {
-        FileFormat = {
-            provider = "FileFormat",
+        FileIcon = {
+            provider = "FileIcon",
+            condition = buffer_not_empty,
             separator = " ",
-            separator_highlight = {"NONE", colors.bg},
-            highlight = {colors.cyan, colors.bg, "bold"}
+            separator_highlight = {"NONE", colors.bg1},
+            highlight = {
+                require("galaxyline.provider_fileinfo").get_file_icon_color,
+                colors.bg1
+            }
         }
     }
 
     gls.right[3] = {
+        FileName = {
+            provider = {"FileName"},
+            condition = buffer_not_empty,
+            highlight = {colors.green, colors.bg1, "bold"}
+        }
+    }
+
+    -- gls.right[4] = {
+    --     FileSize = {
+    --         provider = "FileSize",
+    --         condition = buffer_not_empty,
+    --         highlight = {colors.fg, colors.bg1}
+    --     }
+    -- }
+
+    -- gls.right[5] = {
+    --     LineInfo = {
+    --         provider = "LineColumn",
+    --         separator = " ",
+    --         separator_highlight = {"NONE", colors.bg1},
+    --         highlight = {colors.fg, colors.bg1}
+    --     }
+    -- }
+
+    -- gls.right[6] = {
+    --     PerCent = {
+    --         provider = "LinePercent",
+    --         separator = " ",
+    --         separator_highlight = {"NONE", colors.bg1},
+    --         highlight = {colors.fg, colors.bg1, "bold"}
+    --     }
+    -- }
+
+    gls.right[7] = {
+        DiagnosticError = {
+            provider = "DiagnosticError",
+            icon = " ",
+            highlight = {colors.red, colors.bg1}
+        }
+    }
+    gls.right[8] = {
+        DiagnosticWarn = {
+            provider = "DiagnosticWarn",
+            icon = " ",
+            highlight = {colors.yellow, colors.bg1}
+        }
+    }
+
+    gls.right[9] = {
+        DiagnosticHint = {
+            provider = "DiagnosticHint",
+            icon = " ",
+            highlight = {colors.cyan, colors.bg1}
+        }
+    }
+
+    gls.right[10] = {
+        DiagnosticInfo = {
+            provider = "DiagnosticInfo",
+            icon = " ",
+            highlight = {colors.blue, colors.bg1}
+        }
+    }
+
+    gls.right[11] = {
+        GetLspClient = {
+            provider = "GetLspClient",
+            icon = " ",
+            highlight = {colors.yellow, colors.bg1}
+        }
+    }
+
+    gls.right[12] = {
+        FileEncode = {
+            provider = "FileEncode",
+            separator = " ",
+            separator_highlight = {"NONE", colors.bg1},
+            highlight = {colors.cyan, colors.bg1, "bold"}
+        }
+    }
+
+    gls.right[13] = {
+        FileFormat = {
+            provider = "FileFormat",
+            separator = " ",
+            separator_highlight = {"NONE", colors.bg1},
+            highlight = {colors.cyan, colors.bg1, "bold"}
+        }
+    }
+
+    gls.right[14] = {
         GitIcon = {
             provider = function()
                 return "  "
             end,
             condition = require("galaxyline.provider_vcs").check_git_workspace,
             separator = " ",
-            separator_highlight = {"NONE", colors.bg},
-            highlight = {colors.magenta, colors.bg, "bold"}
+            separator_highlight = {"NONE", colors.bg1},
+            highlight = {colors.magenta, colors.bg1, "bold"}
         }
     }
 
-    gls.right[4] = {
+    gls.right[15] = {
         GitBranch = {
             provider = "GitBranch",
             condition = require("galaxyline.provider_vcs").check_git_workspace,
-            highlight = {colors.magenta, colors.bg, "bold"}
+            highlight = {colors.magenta, colors.bg1, "bold"}
         }
     }
 
@@ -248,48 +252,62 @@ if ok then
         return false
     end
 
-    gls.right[5] = {
+    gls.right[16] = {
         DiffAdd = {
             separator = " ",
-            separator_highlight = {"NONE", colors.bg},
+            separator_highlight = {"NONE", colors.bg1},
             provider = "DiffAdd",
             condition = checkwidth,
             icon = " ",
-            highlight = {colors.green, colors.bg}
+            highlight = {colors.green, colors.bg1}
         }
     }
-    gls.right[6] = {
+    gls.right[17] = {
         DiffModified = {
             provider = "DiffModified",
             condition = checkwidth,
             icon = " ",
-            highlight = {colors.orange, colors.bg}
+            highlight = {colors.orange, colors.bg1}
         }
     }
-    gls.right[7] = {
+    gls.right[18] = {
         DiffRemove = {
             provider = "DiffRemove",
             condition = checkwidth,
             icon = " ",
-            highlight = {colors.red, colors.bg}
+            highlight = {colors.red, colors.bg1}
         }
     }
 
-    gls.right[8] = {
-        RainbowBg = {
+    gls.right[19] = {
+        ViModeEnd = {
             provider = function()
-                return "  "
+                -- auto change color according the vim mode
+                local mode_color = {
+                    n = colors.blue,
+                    i = colors.green,
+                    v = colors.magenta,
+                    [""] = colors.blue,
+                    v = colors.magenta,
+                    c = colors.red,
+                    no = colors.magenta,
+                    s = colors.orange,
+                    [""] = colors.orange,
+                    ic = colors.yellow,
+                    R = colors.magenta,
+                    Rv = colors.magenta,
+                    cv = colors.red,
+                    ce = colors.red,
+                    r = colors.cyan,
+                    rm = colors.cyan,
+                    ["r?"] = colors.cyan,
+                    ["!"] = colors.red,
+                    t = colors.red
+                }
+                vim.api.nvim_command("hi GalaxyViModeEnd guifg=" .. mode_color[vim.fn.mode()])
+                return "▊"
             end,
-            highlight = {colors.bg, colors.bg}
-        }
-    }
-
-    gls.right[9] = {
-        RainbowBlue = {
-            provider = function()
-                return " "
-            end,
-            highlight = {colors.white1, colors.white1}
+            highlight = {colors.red, colors.bg, "bold"}
         }
     }
 
@@ -297,7 +315,7 @@ if ok then
         BufferType = {
             provider = "FileTypeName",
             separator = " ",
-            separator_highlight = {"NONE", colors.bg},
+            separator_highlight = {"NONE", colors.bg1},
             highlight = {colors.blue, colors.bg, "bold"}
         }
     }

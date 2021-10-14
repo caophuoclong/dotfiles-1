@@ -79,7 +79,7 @@ if ok then
     local lsp_default_config = {
         on_attach = on_attach,
         flags = {
-            debounce_text_changes = 0
+            debounce_text_changes = 10
         },
         capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
     }

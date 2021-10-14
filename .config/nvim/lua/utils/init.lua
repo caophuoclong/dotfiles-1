@@ -32,10 +32,11 @@ utils.colors = {
 local ok, nightfox = pcall(require, "nightfox.colors")
 if ok then
     utils.colors = nightfox.load("nordfox")
-    utils.colors.bg = "#252933"
-    utils.colors.bg1 = "#2E3440"
+    utils.colors.bg = "#2E3440"
+    utils.colors.bg1 = "#3B4252"
     utils.colors.white1 = "#D8DEE9"
 end
+-- utils.colors = require("galaxyline.themes.colors")["rose-pine"]
 
 utils.signs = {Error = "", Warn = "", Hint = "", Info = ""}
 

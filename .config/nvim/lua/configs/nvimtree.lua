@@ -1,9 +1,7 @@
 local ok, nvimtree = pcall(require, "nvim-tree")
 
 if ok then
-    nvimtree.setup {
-        lsp_diagnostics = false
-    }
+    nvimtree.setup {}
     local signs = require("utils").signs
 
     function NvimTreeOSOpen()

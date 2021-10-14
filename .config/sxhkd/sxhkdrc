@@ -7,7 +7,7 @@ super + F1
 
 # Open Terminal
 super + Return
-  tilix
+  xfce4-terminal
 
 # Notion workspace
 super + n
@@ -15,7 +15,7 @@ super + n
 
 # Open Terminal in floating mode
 super + shift + Return
-  bspc rule -a Tilix -o state=floating && tilix
+  bspc rule -a Xfce4-terminal -o state=floating && xfce4-terminal
 
 # Open launcher
 super + slash
