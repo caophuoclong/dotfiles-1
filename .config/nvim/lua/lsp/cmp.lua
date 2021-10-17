@@ -2,6 +2,14 @@ local ok, cmp = pcall(require, "cmp")
 
 if ok then
     local lspkind = require("lspkind")
+
+    -- Color highlight cmp menu items
+    vim.api.nvim_command [[
+        highlight CmpItemAbbr guifg=#A3BE8C
+        highlight CmpItemKind guifg=#B48EAD
+        highlight CmpItemMenu guifg=#D08770
+    ]]
+
     require("luasnip/loaders/from_vscode").lazy_load(
         {
             paths = {
@@ -55,7 +63,8 @@ if ok then
             formatting = {
                 format = function(entry, vim_item)
                     -- Set Icons for completion menu
-                    vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+                    -- vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+                    vim_item.kind = string.format("%s", icons[vim_item.kind])
 
                     vim_item.menu =
                         ({

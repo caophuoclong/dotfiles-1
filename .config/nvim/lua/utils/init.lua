@@ -34,10 +34,26 @@ if ok then
     utils.colors = nightfox.load("nordfox")
     utils.colors.bg = "#2E3440"
     utils.colors.bg1 = "#3B4252"
+    utils.colors.bg2 = "#434C5E"
     utils.colors.white1 = "#D8DEE9"
 end
 -- utils.colors = require("galaxyline.themes.colors")["rose-pine"]
 
 utils.signs = {Error = "", Warn = "", Hint = "", Info = ""}
+
+utils.powerline = {
+    circle = {
+        left = "",
+        right = ""
+    },
+    arrow = {
+        left = "",
+        right = ""
+    },
+    triangle = {
+        left = "",
+        right = ""
+    }
+}
 
 return utils

@@ -112,7 +112,7 @@ backup)
   cp -r ~/.scripts $DOTFILES_DIR/
   cp -r ~/.vsnip $DOTFILES_DIR/
   cp -r ~/.config/bat $DOTFILES_DIR/.config/
-  cp -r ~/.config/bpytop $DOTFILES_DIR/.config/
+  cp -r ~/.config/btop $DOTFILES_DIR/.config/
   cp -r ~/.config/bspwm $DOTFILES_DIR/.config/
   cp -r ~/.config/cava $DOTFILES_DIR/.config/
   cp -r ~/.config/dunst $DOTFILES_DIR/.config/
@@ -169,29 +169,23 @@ backup)
 
 *)
   echo -e " Starting restore dotfiles"
-  start_spinner "➜ Get latest dotfiles from Github"
-  if [ -d "$DOTFILES_DIR" ]; then
-    rm -rf $DOTFILES_DIR
-    git clone --recurse-submodules -j8 $DOTFILES_REPO $DOTFILES_DIR >/dev/null 2>&1
-  fi
 
   cd $DOTFILES_DIR
-  stop_spinner $?
 
   start_spinner "➜ Restoring..."
-  yes | cp -r .bashrc ~/
-  yes | cp -r .clang-format ~/
-  yes | cp -r .gitconfig ~/
-  yes | cp -r .gitconfig ~/
-  yes | cp -r .prettierrc ~/
-  yes | cp -r .tmux.conf ~/
-  yes | cp -r .vimrc ~/
-  yes | cp -r .xinitrc ~/
-  yes | cp -r .Xresources ~/
-  yes | cp -r .zshrc ~/
-  yes | cp -r .scripts ~/
-  yes | cp -r .vsnip ~/
-  yes | cp -r .config/* ~/.config/
+  cp .bashrc ~/
+  cp .clang-format ~/
+  cp .gitconfig ~/
+  cp .gitconfig ~/
+  cp .prettierrc ~/
+  cp .tmux.conf ~/
+  cp .vimrc ~/
+  cp .xinitrc ~/
+  cp .Xresources ~/
+  cp .zshrc ~/
+  cp .scripts ~/
+  cp .vsnip ~/
+  cp .config/* ~/.config/
 
   cd $CURRENT_PWD
   stop_spinner $?

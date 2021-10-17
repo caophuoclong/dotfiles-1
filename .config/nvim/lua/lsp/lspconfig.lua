@@ -73,7 +73,7 @@ if ok then
         },
         yamlls = {},
         prismals = {},
-        rust_analyzer = {}
+        rust_analyzer = {},
     }
 
     local lsp_default_config = {

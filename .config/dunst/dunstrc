@@ -1,7 +1,7 @@
 [global]
 	monitor = 0
 	follow = mouse
-	geometry = "325x50-5+35"
+	geometry = "325x50-5+30"
 	indicate_hidden = yes
 	shrink = yes
 	transparency = 0
@@ -77,15 +77,28 @@ format = "Discord\n%s\n%b"
 
 
 [Youtube Music]
-    history_ignore = yes
-    appname = "Youtube Music"
-    format = "<b><span foreground='#BF616A'></span> %a</b>\n%s"
-    max_icon_size = 128
-    timeout = 10
+   history_ignore = yes
+   appname = "Youtube Music"
+   format = "<b><span foreground='#BF616A'></span> %a</b>\n%s"
+   max_icon_size = 128
+   timeout = 10
 	 frame_color="#BF616A"
-	 script = 
-[IBUS]
-	script =
-[play_sound]
-    summary = "*"
-    script = /home/vu/.scripts/notification_sound.sh
+
+[Pomodoro Break]
+   appname = "Pomodoro Break"
+   format = "Take a break!"
+	 frame_color="#A3BE8C"
+   script = /home/vu/.scripts/notification_sound_pomo_break.sh
+
+[Pomodoro Work]
+   appname = "Pomodoro Work"
+   format = "Focus to work!"
+	 frame_color="#BF616A"
+   script = /home/vu/.scripts/notification_sound_pomo_work.sh
+
+[Pomodoro Pause]
+   appname = "Pomodoro Pause"
+   format = "Pomodoro Pause!"
+	 frame_color="#88C0D0"
+   script = /home/vu/.scripts/notification_sound_pomo_pause.sh
+

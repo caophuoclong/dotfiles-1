@@ -1,9 +1,10 @@
 #! /bin/sh
 pgrep -x sxhkd >/dev/null || sxhkd &
 ~/.config/dunst/load.sh &
-~/.config/polybar/launch_float.sh &
+~/.config/polybar/launch.sh float &
 
-bspc monitor -d  爵    ﴬ   漣
+# bspc monitor -d  爵    ﴬ   漣
+bspc monitor -d         
 #bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 # bspc config automatic_scheme spiral
 bspc config border_width 0
@@ -33,3 +34,4 @@ bspc rule -a Caprine desktop='^8' follow=on
 bspc rule -a pomotroid state=floating rectangle=600+503+145
 
 bspc rule -a Gthumb state=floating follow=on center=true
+bspc rule -a Font-manager state=floating follow=on center=true

@@ -2,6 +2,8 @@ local ok, gl = pcall(require, "galaxyline")
 
 if ok then
     local colors = require("utils").colors
+    local powerline = require("utils").powerline.arrow
+
     local gls = gl.section
     gl.short_line_list = {"NvimTree", "vista", "dbui"}
     local diagnostic = gl.provider_diagnostic
@@ -75,15 +77,15 @@ if ok then
                 }
 
                 local alias = {
-                    n = "NORMAL",
-                    i = "INSERT",
-                    c = "COMMAND",
-                    V = "VISUAL",
-                    [""] = "VISUAL",
-                    v = "VISUAL",
-                    R = "REPLACE",
+                    n = "NORMAL גּ ",
+                    i = "INSERT הּ ",
+                    c = "COMMAND בּ ",
+                    V = "VISUAL  ",
+                    [""] = "VISUAL  ",
+                    v = "VISUAL  ",
+                    R = "REPLACE הּ ",
                     no = "no",
-                    s = "SELECT",
+                    s = "SELECT הּ ",
                     [""] = " ",
                     ic = "ic",
                     Rv = "Rv",
@@ -93,10 +95,10 @@ if ok then
                     rm = "RM",
                     ["r?"] = "r?",
                     ["!"] = "!",
-                    t = "TERMINAL"
+                    t = "TERMINAL  "
                 }
                 vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim.fn.mode()])
-                return "▊ " .. alias[vim.fn.mode()] .. " הּ "
+                return "▊ " .. alias[vim.fn.mode()]
             end,
             highlight = {colors.red, colors.bg1, "bold"}
         }
@@ -105,18 +107,18 @@ if ok then
     gls.left[2] = {
         RightPL = {
             provider = function()
-                return ""
+                return powerline.right
             end,
             highlight = {colors.bg1, colors.bg}
         }
     }
 
     gls.right[1] = {
-        LeftPL = {
+        LeftPLEnd = {
             provider = function()
-                return ""
+                return powerline.left
             end,
-            highlight = {colors.bg1, colors.bg}
+            highlight = {colors.bg2, colors.bg}
         }
     }
 
@@ -125,10 +127,10 @@ if ok then
             provider = "FileIcon",
             condition = buffer_not_empty,
             separator = " ",
-            separator_highlight = {"NONE", colors.bg1},
+            separator_highlight = {"NONE", colors.bg2},
             highlight = {
                 require("galaxyline.provider_fileinfo").get_file_icon_color,
-                colors.bg1
+                colors.bg2
             }
         }
     }
@@ -137,7 +139,7 @@ if ok then
         FileName = {
             provider = {"FileName"},
             condition = buffer_not_empty,
-            highlight = {colors.green, colors.bg1, "bold"}
+            highlight = {colors.green, colors.bg2, "bold"}
         }
     }
 
@@ -171,14 +173,14 @@ if ok then
         DiagnosticError = {
             provider = "DiagnosticError",
             icon = " ",
-            highlight = {colors.red, colors.bg1}
+            highlight = {colors.red, colors.bg2}
         }
     }
     gls.right[8] = {
         DiagnosticWarn = {
             provider = "DiagnosticWarn",
             icon = " ",
-            highlight = {colors.yellow, colors.bg1}
+            highlight = {colors.yellow, colors.bg2}
         }
     }
 
@@ -186,7 +188,7 @@ if ok then
         DiagnosticHint = {
             provider = "DiagnosticHint",
             icon = " ",
-            highlight = {colors.cyan, colors.bg1}
+            highlight = {colors.cyan, colors.bg2}
         }
     }
 
@@ -194,7 +196,7 @@ if ok then
         DiagnosticInfo = {
             provider = "DiagnosticInfo",
             icon = " ",
-            highlight = {colors.blue, colors.bg1}
+            highlight = {colors.blue, colors.bg2}
         }
     }
 
@@ -202,7 +204,7 @@ if ok then
         GetLspClient = {
             provider = "GetLspClient",
             icon = " ",
-            highlight = {colors.yellow, colors.bg1}
+            highlight = {colors.yellow, colors.bg2}
         }
     }
 
@@ -210,8 +212,8 @@ if ok then
         FileEncode = {
             provider = "FileEncode",
             separator = " ",
-            separator_highlight = {"NONE", colors.bg1},
-            highlight = {colors.cyan, colors.bg1, "bold"}
+            separator_highlight = {"NONE", colors.bg2},
+            highlight = {colors.cyan, colors.bg2, "bold"}
         }
     }
 
@@ -219,28 +221,37 @@ if ok then
         FileFormat = {
             provider = "FileFormat",
             separator = " ",
-            separator_highlight = {"NONE", colors.bg1},
-            highlight = {colors.cyan, colors.bg1, "bold"}
+            separator_highlight = {"NONE", colors.bg2},
+            highlight = {colors.cyan, colors.bg2, "bold"}
         }
     }
 
     gls.right[14] = {
-        GitIcon = {
+        LeftPL = {
             provider = function()
-                return "  "
+                return powerline.left
             end,
-            condition = require("galaxyline.provider_vcs").check_git_workspace,
-            separator = " ",
-            separator_highlight = {"NONE", colors.bg1},
-            highlight = {colors.magenta, colors.bg1, "bold"}
+            highlight = {colors.bg1, colors.bg2}
         }
     }
 
     gls.right[15] = {
+        GitIcon = {
+            provider = function()
+                return " "
+            end,
+            condition = require("galaxyline.provider_vcs").check_git_workspace,
+            highlight = {colors.red, colors.bg1, "bold"}
+        }
+    }
+
+    gls.right[16] = {
         GitBranch = {
             provider = "GitBranch",
             condition = require("galaxyline.provider_vcs").check_git_workspace,
-            highlight = {colors.magenta, colors.bg1, "bold"}
+            separator = " ",
+            separator_highlight = {"NONE", colors.bg1},
+            highlight = {colors.fg, colors.bg1}
         }
     }
 
@@ -252,29 +263,29 @@ if ok then
         return false
     end
 
-    gls.right[16] = {
+    gls.right[17] = {
         DiffAdd = {
             separator = " ",
             separator_highlight = {"NONE", colors.bg1},
             provider = "DiffAdd",
             condition = checkwidth,
-            icon = " ",
+            icon = " ",
             highlight = {colors.green, colors.bg1}
         }
     }
-    gls.right[17] = {
+    gls.right[18] = {
         DiffModified = {
             provider = "DiffModified",
             condition = checkwidth,
-            icon = " ",
+            icon = " ",
             highlight = {colors.orange, colors.bg1}
         }
     }
-    gls.right[18] = {
+    gls.right[19] = {
         DiffRemove = {
             provider = "DiffRemove",
             condition = checkwidth,
-            icon = " ",
+            icon = " ",
             highlight = {colors.red, colors.bg1}
         }
     }

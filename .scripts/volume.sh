@@ -15,10 +15,7 @@ function is_mute {
 
 function send_notification {
     volume=`get_volume`
-    
-    dunstify -h string:x-dunst-stack-tag:test -A 'volume,default' -a VOLUME "$volume" -i '~/.config/dunst/icons/014-volume.svg'
-    
-    
+    dunstify -h string:x-dunst-stack-tag:test -A 'volume,default' -a VOLUME "$volume" -i '~/.config/dunst/icons/volume.svg'
 }
 
 case $1 in
