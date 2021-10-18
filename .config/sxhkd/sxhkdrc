@@ -32,7 +32,7 @@ super + Escape
 
 # Open web browser
 super + b
-  google-chrome-stable
+  firefox-developer-edition
 
 # Open file manager
 super + f
