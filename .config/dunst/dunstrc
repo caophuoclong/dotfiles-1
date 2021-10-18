@@ -1,4 +1,3 @@
-
 [global]
 	monitor = 0
 	follow = mouse
@@ -39,7 +38,7 @@
 	class = Dunst
 	startup_notification = false
 	force_xinerama = false
-	corner_radius = 0
+	corner_radius = 8
 [experimental]
 	per_monitor_dpi = false
 [shortcuts]
@@ -84,4 +83,9 @@ format = "Discord\n%s\n%b"
     max_icon_size = 128
     timeout = 10
 	 frame_color="#BF616A"
-
+	 script = 
+[IBUS]
+	script =
+[play_sound]
+    summary = "*"
+    script = /home/vu/.scripts/notification_sound.sh

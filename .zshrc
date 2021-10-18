@@ -55,6 +55,8 @@ alias top="bpytop"
 alias tb="taskbook"
 alias v="\vim"
 alias dots="~/.scripts/dots.sh"
+alias vocab="cat ~/Documents/Notes/English/TodayVocab.md"
+alias vocabe="nvim ~/Documents/Notes/English/TodayVocab.md"
 # Functions
 ex() {
   if [ -f $1 ]; then

@@ -41,4 +41,5 @@ numlockx &
 nitrogen --restore &
 picom -f &
 xsetroot -cursor_name left_ptr &
+/home/vu/.scripts/pomo/pomo.sh notify &
 exec bspwm
