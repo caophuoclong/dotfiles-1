@@ -1,9 +1,11 @@
+#!/bin/bash
+
 engine=$(ibus engine)
 
 ENGLISH="xkb:us::eng"
 VIETNAM="Bamboo"
 if [[ "$engine" == "$VIETNAM" ]]; then
-    echo "VI"
+  echo "VI"
 else
-    echo "EN"
+  echo "EN"
 fi

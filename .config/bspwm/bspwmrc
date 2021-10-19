@@ -4,7 +4,7 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 ~/.config/polybar/launch.sh float &
 
 # bspc monitor -d  爵    ﴬ   漣
-bspc monitor -d         
+bspc monitor -d         
 #bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 # bspc config automatic_scheme spiral
 bspc config border_width 0

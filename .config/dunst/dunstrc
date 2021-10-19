@@ -14,7 +14,7 @@
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
-	font = CartographCF Nerd Font Bold 8
+	font = Liga SFMono Nerd Font Bold 8
 	line_height = 4
 	markup = full
 	format = "%a\n%s\n%b"

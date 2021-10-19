@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 function scroll () {
     prefix="$1"
