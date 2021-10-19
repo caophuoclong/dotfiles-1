@@ -119,7 +119,6 @@ backup)
   cp -r ~/.config/fish $DOTFILES_DIR/.config/
   cp -r ~/.config/fontconfig $DOTFILES_DIR/.config/
   cp -r ~/.config/gtk-3.0 $DOTFILES_DIR/.config/
-  cp -r ~/.config/lsd $DOTFILES_DIR/.config/
   cp -r ~/.config/nvim $DOTFILES_DIR/.config/
   cp -r ~/.config/omf $DOTFILES_DIR/.config/
   cp -r ~/.config/paru $DOTFILES_DIR/.config/
