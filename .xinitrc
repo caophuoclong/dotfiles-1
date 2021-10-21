@@ -39,7 +39,9 @@ fi
 # /usr/bin/dropbox &
 ibus-daemon -drx &
 numlockx &
-nitrogen --restore &
+feh --bg-fill "/home/vu/Pictures/wallpapers/nord.jpg" &
+~/.scripts/feh-blur --blur 4 --darken 4 --daemon &
+# nitrogen --restore &
 picom -f &
 xsetroot -cursor_name left_ptr &
 /home/vu/.scripts/pomo/pomo.sh notify &
